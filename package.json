@@ -1,0 +1,29 @@
+{
+  "name": "algo-acs",
+  "version": "0.0.0",
+  "description": "Ant Colony System",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bredele/algo-acs.git"
+  },
+  "keywords": [
+    "ant",
+    "colony",
+    "system"
+  ],
+  "author": "Olvier <olivier.wietrich@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bredele/algo-acs/issues"
+  },
+  "homepage": "https://github.com/bredele/algo-acs#readme",
+  "dependencies": {
+    "exploitation": "github:bredele/exploitation",
+    "exploration": "github:bredele/exploration",
+    "pheromone": "github:bredele/pheromone"
+  }
+}
