@@ -1,6 +1,12 @@
 # Ant Colony System
 
-Ant Colony system algorithm.
+Ant Colony System algorithm.
+
+## Usage
+
+```js
+
+```
 
 ## License
 
