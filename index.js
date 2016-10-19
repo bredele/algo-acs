@@ -2,34 +2,62 @@
  * Dependencies
  */
 
-var pheromone = require('pheromone')
-var exploration = require('exploration')
+var update = require('pheromone')
+var exploitation = require('exploitation')
 
 
 /**
+ * Ant Colony System.
  *
- * ρ
+ *
+ *
+ * Examples
+ *
+ *
+ * @return {Function}
+ * @api public
  */
 
-module.exports = function(ants) {
-  var length = ants.length - 1
-  //var pheromones = init(length)
-  var τ = 1
-  // step
+module.exports = function(ants, τ = 1, ρ = 0.1, α = 0.1) {
+  var pheromones = []
   return function(cb) {
-    ants.map((ant, idx) => {
-      var tour = 0
-      var transition = exploration(ants, pheromones, idx, beta)
-      while(length--) {
-        let id = transition(function(start, end, pheromone) {
-          var distance = euclidean(start, end)
-          tour += distance
-          return distance
-        })
-        tour += length
-        local(idx, id)
-      }
+    var {best, length} = step(ants, pheromones, ρ, cb)
+    // global update
+    best.filter((r, s) => {
+      update(pheromones[r][s], 1 / length, α)
     })
-    global(pheromones)
+    return best
   }
+}
+
+
+/**
+ * Ant Colony System step.
+ *
+ * A step is when all ants finished a tour.
+ *
+ * @param {Array} ants
+ * @param {Array} pheromones
+ * @param {Number} ρ (local decay)
+ * @param {Function?} cb
+ * @return {Number}
+ * @api private
+ */
+
+function step(ants, pheromones, ρ, cb) {
+  var best = 0
+  var length = 0
+  var j = ants.length - 1
+  ants.map((k, r) => {
+    var tour = 0
+    var transition = exploitation(r, ants)
+    while(j--) {
+      let s = transition(pheromones, cb)
+      tour += distance
+      // local update
+      update(pheromones[r][s], delta, ρ)
+    }
+    return tour
+  })
+  return best
 }
