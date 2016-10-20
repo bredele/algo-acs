@@ -28,7 +28,7 @@ module.exports = function(ants, β = 2, τ = 1, ρ = 0.1, α = 0.1, distance = e
     var {best, length} = step(ants, pheromones, τ, ρ, β, distance, cb)
     // global update
     best.reduce((r, s) => {
-      update(pheromones[r][s], 1 / length, α)
+      pheromones[r][s] += update(pheromones[r][s], 1 / length, α)
     })
     return best
   }
@@ -65,7 +65,7 @@ function step(ants, pheromones, delta, ρ, β, distance, cb) {
       visited.push(s)
       tour += distance(ants[r], ants[s])
       // local update
-      update(pheromones[r][s], delta, ρ)
+      pheromones[r][s] += update(pheromones[r][s], delta, ρ)
     }
     if(tour > length) {
       best = visited
