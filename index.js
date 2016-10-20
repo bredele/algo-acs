@@ -4,7 +4,7 @@
 
 var update = require('pheromone')
 var exploitation = require('exploitation')
-var euclidean = require('euclidean')
+var distance = require('euclidean')
 
 
 /**
@@ -56,7 +56,7 @@ function step(ants, pheromones, delta, ρ, cb) {
     while(j--) {
       let s = transition(pheromones, cb)
       visited.push(s)
-      tour += distance
+      tour += distance(ants[r], ants[s])
       // local update
       update(pheromones[r][s], delta, ρ)
     }
