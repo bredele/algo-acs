@@ -4,12 +4,11 @@
 
 var update = require('pheromone')
 var exploitation = require('exploitation')
+var euclidean = require('euclidean')
 
 
 /**
  * Ant Colony System.
- *
- *
  *
  * Examples
  *
@@ -23,7 +22,7 @@ module.exports = function(ants, τ = 1, ρ = 0.1, α = 0.1) {
   return function(cb) {
     var {best, length} = step(ants, pheromones, τ, ρ, cb)
     // global update
-    best.filter((r, s) => {
+    best.reduce((r, s) => {
       update(pheromones[r][s], 1 / length, α)
     })
     return best
@@ -40,7 +39,7 @@ module.exports = function(ants, τ = 1, ρ = 0.1, α = 0.1) {
  * @param {Array} pheromones
  * @param {Number} delta
  * @param {Number} ρ (local decay)
- * @param {Function?} cb
+ * @param {Function} cb (optional)
  * @return {Object}
  * @api private
  */

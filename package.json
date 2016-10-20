@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/bredele/algo-acs#readme",
   "dependencies": {
+    "euclidean": "github:bredele/euclidean",
     "exploitation": "github:bredele/exploitation",
     "exploration": "github:bredele/exploration",
     "pheromone": "github:bredele/pheromone"
