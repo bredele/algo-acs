@@ -10,9 +10,14 @@ var eulidean = require('euclidean')
 /**
  * Ant Colony System.
  *
- * Examples
+ * Examples:
  *
- *
+ * @param {Array} ants
+ * @param {Number} β importance pheromone over distance
+ * @param {Number} τ initial pheromone deposit
+ * @param {Number} ρ local decay
+ * @param {Number} α global decay
+ * @param {Function} distance
  * @return {Function}
  * @api public
  */
