@@ -12,6 +12,11 @@ var eulidean = require('euclidean')
  *
  * Examples:
  *
+ *  var tsp = acs(cities)
+ *  // repeat tsp until finding optimal route
+ *  tsp()
+ *  tsp()
+ *
  * @param {Array} ants
  * @param {Number} β importance pheromone over distance
  * @param {Number} τ initial pheromone deposit
