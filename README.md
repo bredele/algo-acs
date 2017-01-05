@@ -1,6 +1,6 @@
 # Ant Colony system
 
-[![Status](https://img.shields.io/badge/status-experimental-orange.svg?style=flat-square)
+[![Status](https://img.shields.io/badge/status-experimental-orange.svg?style=flat-square)]
 [![pledge](https://bredele.github.io/contributing-guide/community-pledge.svg)](https://github.com/bredele/contributing-guide/blob/master/community.md)
 
 
