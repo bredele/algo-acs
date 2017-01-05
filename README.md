@@ -1,16 +1,30 @@
-# Ant Colony System
+# Ant Colony system
 
-Ant Colony System algorithm.
+[![Status](https://img.shields.io/badge/status-experimental-orange.svg?style=flat-square)
+[![pledge](https://bredele.github.io/contributing-guide/community-pledge.svg)](https://github.com/bredele/contributing-guide/blob/master/community.md)
 
-## Usage
 
-```js
+Ant colony system algorithm is a probabilistic technique for solving computational problems which can be reduced to finding good paths through graphs.
 
+## Installation
+
+```shell
+npm install bredele/algo-acs --save
 ```
+
+## Question
+
+For questions and feedback please use our [twitter account](https://twitter.com/bredeleca). For support, bug reports and or feature requests please make sure to read our
+<a href="https://github.com/bredele/contributing-guide/blob/master/community.md" target="_blank">community guideline</a> and use the issue list of this repo and make sure it's not present yet in our reporting checklist.
+
+
+## Contribution
+
+Algo-acs is an open source project and would not exist without its community. If you want to participate please make sure to read our <a href="https://github.com/bredele/contributing-guide/blob/master/community.md" target="_blank">guideline</a> before making a pull request. If you have any algo-acs-related project, component or other let everyone know on our [chat room](https://gitter.im/hotmealjs/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link) or in our wiki.
 
 ## License
 
-MIT License
+The MIT License (MIT)
 
 Copyright (c) 2016 Olivier Wietrich
 
